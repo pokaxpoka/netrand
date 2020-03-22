@@ -160,12 +160,23 @@ class CnnPolicy(object):
                 
                 # tf.image.adjust_brightness vs. ImageEnhance.Brightness
                 # tf version is additive while PIL version is multiplicative
-                delta_brightness = tf.Variable(tf.random_uniform([], -.5, .5), trainable=False, name='randprocess_brightness')
+                delta_brightness = tf.get_variable(
+                    name='randprocess_brightness',
+                    initializer=tf.random_uniform([], -.5, .5),                 
+                    trainable=False)
+                
                 # tf.image.adjust_contrast vs. PIL.ImageEnhance.Contrast
-                delta_contrast   = tf.Variable(tf.random_uniform([], .5, 1.5), trainable=False, name='randprocess_contrast')
+                delta_contrast = tf.get_variable(
+                    name='randprocess_contrast', 
+                    initializer=tf.random_uniform([], .5, 1.5),
+                    trainable=False,)
+                
                 # tf.image.adjust_saturation vs. PIL.ImageEnhance.Color
-                delta_saturation = tf.Variable(tf.random_uniform([], .5, 1.5), trainable=False, name='randprocess_saturation')
-
+                delta_saturation = tf.get_variable(
+                    name='randprocess_saturation',
+                    initializer=tf.random_uniform([], .5, 1.5), 
+                    trainable=False,)
+                
                 processed_x1 = tf.image.adjust_brightness(masked, delta_brightness)
                 processed_x1 = tf.clip_by_value(processed_x1, 0., 255.)
                 processed_x1 = tf.where(mask_vbox, x=masked, y=processed_x1)
