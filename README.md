@@ -18,22 +18,22 @@ replace `coinrun.cpp`, `coinrunenv.py`, `config.py`, `policies.py`, `ppo2.py`, `
 
 Vanilar PPO 
 ```
-python -m coinrun.train_agent --run-id myrun --save-interval 1 --num_levels 500
+python -m coinrun.train_agent --run-id myrun --save-interval 1 --num-levels 500
 ```
 
 Vanilar PPO + CutOut
 ```
-python -m coinrun.train_agent --run-id myrun --save-interval 1 --num_levels 500 -uda 1
+python -m coinrun.train_agent --run-id myrun --save-interval 1 --num-levels 500 -uda 1
 ```
 
 Vanilar PPO + Dropout
 ```
-python -m coinrun.train_agent --run-id myrun --save-interval 1 --num_levels 500 -dropout 0.1
+python -m coinrun.train_agent --run-id myrun --save-interval 1 --num-levels 500 -dropout 0.1
 ```
 
 Vanilar PPO + BN
 ```
-python -m coinrun.train_agent --run-id myrun --save-interval 1 --num_levels 500 -norm 1
+python -m coinrun.train_agent --run-id myrun --save-interval 1 --num-levels 500 -norm 1
 ```
 
 Vanilar PPO + L2
@@ -43,7 +43,7 @@ python -m coinrun.train_agent --run-id myrun --save-interval 1 --num_levels 500 
 
 Vanilar PPO + Grayout
 ```
-python -m coinrun.train_agent --run-id myrun --save-interval 1 --num_levels 500 -ubw 1
+python -m coinrun.train_agent --run-id myrun --save-interval 1 --num-levels 500 -ubw 1
 ```
 
 
@@ -55,7 +55,7 @@ python -m coinrun.train_agent --run-id myrun --save-interval 1 --num_levels 500 
 
 Vanilar PPO + Color Jitter
 ```
-python -m coinrun.train_agent --run-id myrun --save-interval 1 --num_levels 500 -uct 1
+python -m coinrun.train_agent --run-id myrun --save-interval 1 --num-levels 500 -uct 1
 ```
 
 PPO + ours
