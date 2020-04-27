@@ -122,7 +122,7 @@ class ConfigSingle(object):
         # additonal flags for random netwokrs
         random_keys.append(('train_flag', 'train_flag', int, 0))
         random_keys.append(('fm_coeff', 'fm_coeff', float, 0.002))
-        random_keys.append(('real_thres', 'real_thres', float, 0.1))
+        random_keys.append(('real_thres', 'real_thres', float, 0.9))
         
         random_keys.append(('ui', 'use_inversion', int, 0))
         random_keys.append(('uct', 'use_color_transform', int, 0))
